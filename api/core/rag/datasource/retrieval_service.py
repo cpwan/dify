@@ -293,6 +293,7 @@ class RetrievalService:
                             segment_child_map[segment.id] = map_detail
                             record = {
                                 "segment": segment,
+                                "page_no": document.metadata.get("page", None),
                             }
                             records.append(record)
                         else:
@@ -328,6 +329,7 @@ class RetrievalService:
                     record = {
                         "segment": segment,
                         "score": document.metadata.get("score", None),
+                        "page_no": document.metadata.get("page", None),
                     }
 
                     records.append(record)
